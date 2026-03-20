@@ -210,15 +210,3 @@ Drift Detection runs
 
 ---
 
-## 🏷️ ATS Keywords This Project Covers
-
-`MLOps` `MLflow` `DVC` `model registry` `data drift` `model monitoring`
-`FastAPI` `Docker` `GitHub Actions` `Prometheus` `Evidently AI`
-`Scikit-learn` `Random Forest` `CI/CD` `experiment tracking`
-`embeddings` `production ML` `model serving` `data versioning`
-
----
-
-## 📄 License
-
-MIT — free to use, modify, and showcase in interviews.
