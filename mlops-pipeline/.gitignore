@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.env
+venv/
+.venv/
+mlruns/
+models/*.pkl
+data/raw/
+data/processed/
+data/drift/
+monitoring/drift_reports/
+*.log
+.DS_Store
+chroma_db/
+.dvc/tmp/

@@ -1,0 +1,16 @@
+preprocess:
+  n_samples: 1025
+  random_seed: 42
+  test_size: 0.2
+
+train:
+  n_estimators: 200
+  max_depth: 10
+  min_samples_split: 5
+  test_size: 0.2
+  random_seed: 42
+
+drift:
+  threshold: 0.15
+  psi_threshold: 0.2
+  batch_size: 200

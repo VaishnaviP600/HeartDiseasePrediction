@@ -1,0 +1,40 @@
+stages:
+  preprocess:
+    cmd: python src/preprocess.py --generate
+    deps:
+      - src/preprocess.py
+    outs:
+      - data/processed/heart_disease.csv
+    params:
+      - params.yaml:
+          - preprocess.n_samples
+          - preprocess.random_seed
+
+  drift_detection:
+    cmd: python src/drift_detection.py
+    deps:
+      - src/drift_detection.py
+      - data/processed/heart_disease.csv
+    outs:
+      - data/drift/retrain_flag.json
+    metrics:
+      - monitoring/drift_reports/latest_drift.json:
+          cache: false
+
+  train:
+    cmd: python src/train.py --model all --register
+    deps:
+      - src/train.py
+      - data/processed/heart_disease.csv
+    outs:
+      - models/random_forest.pkl
+      - models/logistic_regression.pkl
+      - models/gradient_boosting.pkl
+    params:
+      - params.yaml:
+          - train.n_estimators
+          - train.max_depth
+          - train.test_size
+    metrics:
+      - metrics.json:
+          cache: false
